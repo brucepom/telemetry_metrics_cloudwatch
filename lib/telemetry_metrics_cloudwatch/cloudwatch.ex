@@ -17,7 +17,7 @@ defmodule TelemetryMetricsCloudwatch.Cloudwatch do
   defp log_result({:ok, _resp}, metric_data, namespace),
     do:
       Logger.debug(
-        "#{__MODULE__} pushed #{length(metric_data)} metrics to cloudwatch in namespace #{
+        "#{__MODULE__} pushed #{inspect(metric_data, pretty: true)} metrics to cloudwatch in namespace #{
           namespace
         }"
       )
